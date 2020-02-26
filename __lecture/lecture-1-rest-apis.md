@@ -10,7 +10,7 @@ _or **RE**presentational **S**tate **T**ransfer._
 
 ## API
 
-_or **A**plication **P**rogramming **I**nterface_
+_or **A**pplication **P**rogramming **I**nterface_
 
 Something that allows one piece of software to talk to another.
 
@@ -37,7 +37,7 @@ It's essentially a set of RESTful principles.
     - The server stores and/or manipulates information and makes it available to the user in an efficient manner.
     - The client takes that information and displays it to the user and/or uses it to perform subsequent requests for information.
     
-_This separation of concerns allows both the client and the server to evolve independently as it only requires that the interface stays the same._
+_This **separation of concerns** allows both the client and the server to evolve independently as it only requires that the interface stays the same._
 
 ---
 
@@ -73,7 +73,7 @@ _This separation of concerns allows both the client and the server to evolve ind
 
 - It should use web standards where they make sense
 - It should be friendly to the developer and be explorable via a browser address bar
-- It should be simple, intuitive and consistent to make adoption not only easy but pleasant
+- **It should be simple, intuitive and consistent to make adoption not only easy but pleasant**
 - It should provide enough flexibility to power majority of the Enchant UI
 - It should be efficient, while maintaining balance with the other requirements
 
@@ -94,12 +94,14 @@ _This separation of concerns allows both the client and the server to evolve ind
 
 _Basically, follow `CRUD` (Create, Read, Update, Delete)_
 
+
+can have multiple & different methods on one endpoint
 ---
 
 ### Example
 
 - `GET    /tickets`     - Retrieves a list of tickets
-- `GET    /tickets/12`  - Retrieves a specific ticket
+- `GET    /tickets/12`  - Retrieves a specific ticket //quick n easy
 - `POST   /tickets`     - Creates a new ticket
 - `PUT    /tickets/12`  - Updates ticket #12
 - `PATCH  /tickets/12`  - Partially updates ticket #12
@@ -118,12 +120,15 @@ If a resources can only exist _within_ a resource, it should be part of the endp
 <img src='./assets/github-endpoints.png' />
 
 ---
+for REST, as much as request info can be in the url the better (eg look at 4 & 5 on the git list of endpoints)
+
 
 ## HTTP Codes
 
 - `200` OK — Show that the operation performed is successful.
 - `201` CREATED — When you use POST method to create a new resource.
 - `202` ACCEPTED — Acknowledge the request sent to the server.
+- `300`s are redirect ones; won't really use
 - `400` BAD REQUEST — When client-side input validation fails.
 - `401` UNAUTHORIZED / `403` FORBIDDEN — When the user or the system is not authorized to perform an operation.
 - `404` NOT FOUND — When looking for certain resource and it is not available in the system.
