@@ -30,15 +30,19 @@ const guessHandler = (req, res) => {
     for (let i=0; i < word.length; i++){
         truth[i] = false;
     };
-    // console.log(truth);
     
-    let wrdArr = word.split('');
-    wrdArr.forEach(char => {
-        if(char === letter){
-            truth[wrdArr.indexOf(char)] = true;
+    // let wordArr = word.split('');
+    // wordArr.forEach(char => {
+    //     if(char === letter){
+    //         truth[wordArr.indexOf(char)] = true;
+    //     }
+    // });
+    for (let i=0 ; i < word.length ; i++){
+        if(word[i] === letter){
+            truth[i] = true;
         }
-    });
-    // console.log(truth);
+    }
+    console.log(truth);
 
     res.status(200).send({
         status: '200',
@@ -60,6 +64,9 @@ express()
     .use(express.urlencoded({extended: false}))
 
     // endpoints
+    .get('/', (req, res) => {
+        res.redirect('/hangman')
+    })
 
     .get('/hangman/words', wordHandler)
 

@@ -1,15 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
     <style>
     </style>
 </head>
 <body>
-    <button id="start" type="button" onclick="startHandler(event)" >Start</button>
+    <h1>PieHunt</h1>
+    <button id="start" class="start" type="button" onclick="startHandler(event)" >Get Word!</button>
     <div class="content">
-        time to get to hanging.... I mean guessing...
+        time to get guessing...
+        <pre>
+        <ul class="dogrun">
+            <li class="d0"></li>
+            <li class="dog d1">
+                   ;~~,__
+    :-....,-------'`-'._.'
+     `-,,,  ,       ,'~~'
+         ; ,'~.__; /
+         :|      :|
+         `-'     `-'
+            </li>
+            <li class="dog d2">
+                   ;~~,__
+    :-....,-------'`-'._.'
+     `-,,,  ,       ,'~~'
+         ; ,'~.__; /--.
+         :| :|   :|``(;
+         `-'`-'  `-'
+            </li>
+            <li class="dog d3">
+                   ;~~,__
+    :-....,-------'`-'._.'
+     `-,,,  ,       ;'~~'
+        ,'_,'~.__; '--.
+       //'       ````(;
+      `-'
+            </li>
+            <li class="dog d4">
+                 .--~~,__
+    :-....,-------`~~'._.'
+     `-,,,  ,_      ;'~U'
+      _,-' ,'`-__; '--.
+     (_/'~~      ''''(;
+            </li>
+
+            <li class="pie">
+          )
+          (
+          )
+     __..---..__
+ ,-='  /  |  \  `=-.
+:--..___________..--;
+ \.,_____________,./
+            </li>
+            <li class="nopie">
+             />-.__
+            / ' _ '    rrr
+           /   ; 
+          /    }
+         /  \ /
+:--..\ /`   \\\..--;
+ \.,_____________,./
+            </li>
+        </ul>
+        </pre>
     </div>
+    <div>
+        <h3 id="wordSpace" class="wordspace"></h3>
+        <p>Letters guessed: <span id="guesses" class="guesses"></span></p>
+        <p>Attempts Used: <span id="attempts" class="attempts">0</span>/5</p>
+        <p id="not-let" class="not-let">That wasn't a letter...</p>
+    </div>
+
+
     <script src="scripts.js"></script>
 </body>
 
