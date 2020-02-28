@@ -58,8 +58,9 @@ p {
 .dogrun {
     list-style-type: none;
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100vw;
     background-color: black;
     color: beige;
     
@@ -67,15 +68,12 @@ p {
 .dogrun > li {
     flex: 1;
 }
-
 .d0, .d5 {
     display: none;
 }
-
 .dog {
     color: black;
 }
-
 .pie {
     display: block;
 }
@@ -83,15 +81,23 @@ p {
     display: none;
 }
 
+.business {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
 .business > p {
     font-size: 1.2rem;
-    /* font-weight: bold; */
+    padding-top: 1.5rem;
+    width: 100%;
 }
 
 .wordspace {
     text-align: center;
-    padding: 1rem;
+    padding: 2rem;
     height: 2rem;
+    width: 100%;
 }
 
 .guesses, .attempts {
@@ -104,3 +110,10 @@ p {
     color: gray;
 }
 
+.victory {
+    position: fixed;
+    right: 10vw;
+    bottom: 10vh;
+    z-index: 2;
+    display: none;
+}

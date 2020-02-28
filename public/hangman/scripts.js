@@ -11,13 +11,16 @@ const notLetter = document.getElementById('notLet');
 
 const dogs = document.querySelector('.dog');
 const pie = document.querySelector('.pie');
-const eatpie = document.querySelector('.nopie');
+const eatenPie = document.querySelector('.nopie');
+const victory = document.querySelector('.victory');
+
 
 //clears the game for fresh play
 const clearGame = () => {
     document.querySelector(`.d${attempts}`).style.color = 'black';
+    victory.style.display = 'none';
     pie.style.display = 'block';
-    eatpie.style.display = 'none';
+    eatenPie.style.display = 'none';
     attempts = 0;
     attemptSpan.innerText = attempts;
     guessSpan.innerText = '';
@@ -33,7 +36,6 @@ const startHandler = (event) => {
     .then(word => {
         console.log(word);
         wordId = word.id;
-        console.log(wordId);
         populate(word.length);
         console.log(array);
     });
@@ -83,14 +85,27 @@ const update = (bools) => {
             if(bools[i] === true){
                 array[i] = key;
             }
-        }
+        };
         wordSpace.innerText = array.join(' ');
+        if (array.every(L => L !== '_')) {
+            console.log('win');
+            getPie();
+        };
     };
+    
     if (attempts >= 5) {
         document.removeEventListener('keydown', keyHandler);
-        console.log('sol');
     };
 };
+
+//win 
+const getPie = () => {
+    document.removeEventListener('keydown', keyHandler);
+    pie.style.display = 'none';
+    victory.style.display = 'block';
+    document.querySelector(`.d${attempts}`).style.color = 'black';
+    new Audio('woof.mp3').play();
+}
 
 //"animates" dog
 const dogSwitch = () => {
@@ -100,7 +115,7 @@ const dogSwitch = () => {
     } else if (attempts === 5) {
         document.querySelector(`.d${attempts-1}`).style.color = 'black';
         pie.style.display = 'none';
-        eatpie.style.display = 'block';
+        eatenPie.style.display = 'block';
     };
 }
 
