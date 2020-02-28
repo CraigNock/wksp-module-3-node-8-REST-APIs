@@ -1,56 +1,56 @@
 const wordList = [
     {
-        word: 'beef',
+        word: 'ball',
         id: 1,
         length: 4
     },
     {
-        word: 'chicken',
+        word: 'dinner',
         id: 2,
-        length: 7
+        length: 6
     },
     {
-        word: 'pork',
+        word: 'walk',
         id: 3,
         length: 4
     },
     {
-        word: 'fish',
+        word: 'bath',
         id: 4,
         length: 4
     },
     {
-        word: 'tofu',
+        word: 'frisbee',
         id: 5,
-        length: 4
+        length: 7
     },
     {
-        word: 'dairy',
+        word: 'bones',
         id: 6,
         length: 5
     },
     {
-        word: 'scotch',
+        word: 'fetch',
         id: 7,
-        length: 6
+        length: 5
     },
     {
-        word: 'beer',
+        word: 'food',
         id: 8,
         length: 4
     },
     {
-        word: 'vodka',
+        word: 'snack',
         id: 9,
         length: 5
     },
     {
-        word: 'rum',
+        word: 'park',
         id: 10,
-        length: 3
+        length: 4
     },
     {
-        word: 'absinthe',
+        word: 'squirrel',
         id: 11,
         length: 8
     }
