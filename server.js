@@ -17,6 +17,7 @@ const wordHandler = (req, res) => {
     let index = randy(0, wordList.length)
     let word = wordList[index];
     console.log(word);
+    delete word.word;
     res.status(200).send(word);
 };
 
@@ -30,20 +31,12 @@ const guessHandler = (req, res) => {
     for (let i=0; i < word.length; i++){
         truth[i] = false;
     };
-    
-    // let wordArr = word.split('');
-    // wordArr.forEach(char => {
-    //     if(char === letter){
-    //         truth[wordArr.indexOf(char)] = true;
-    //     }
-    // });
     for (let i=0 ; i < word.length ; i++){
         if(word[i] === letter){
             truth[i] = true;
         }
     }
-    console.log(truth);
-
+    // console.log(truth);
     res.status(200).send({
         status: '200',
         truth: truth
