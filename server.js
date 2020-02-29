@@ -17,7 +17,7 @@ const wordHandler = (req, res) => {
     let index = randy(0, wordList.length)
     let word = wordList[index];
     console.log(word);
-    delete word.word;
+    word = {id: word.id, length: word.length};
     res.status(200).send(word);
 };
 
