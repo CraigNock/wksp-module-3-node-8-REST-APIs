@@ -2,6 +2,7 @@
 let key = undefined;
 let wordId = undefined;
 let array = [];
+let guesses = [];
 let attempts = 0;
 
 const wordSpace = document.getElementById('wordSpace');
@@ -23,6 +24,7 @@ const clearGame = () => {
     eatenPie.style.display = 'none';
     attempts = 0;
     attemptSpan.innerText = attempts;
+    guesses = [];
     guessSpan.innerText = '';
 }
 
@@ -37,7 +39,7 @@ const startHandler = (event) => {
         console.log(word);
         wordId = word.id;
         populate(word.length);
-        console.log(array);
+        // console.log(array);
     });
     document.addEventListener('keydown', keyHandler);
 };
@@ -56,10 +58,15 @@ const keyHandler = (event) => {
     if (event.repeat) { return };
     key = event.keyCode;
     //checks input to make sure is a letter
+    
     if (key > 64 && key <91 || key > 96 && key <122) {
         notLetter.style.display = 'none';
         key = String.fromCharCode(key);
         key = key.toLowerCase();
+        guesses.push(key);
+        // if(guesses.includes(key)){
+        //     notLetter.style.display = 'block';
+        // } 
         // console.log(key);
         fetch(`/hangman/guess/${wordId}/${key}`)
             .then(data=> data.json())
@@ -71,6 +78,8 @@ const keyHandler = (event) => {
     } else {
         notLetter.style.display = 'block';
     };
+
+    
 };
 
 //update wordview
