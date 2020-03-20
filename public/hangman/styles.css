@@ -1,0 +1,119 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* font-size: 100%; */
+    /* font: inherit; */
+    vertical-align: baseline;
+    box-sizing: border-box; 
+
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(skyblue, goldenrod );
+    font-family: 'Press Start 2P', 'Open Sans';
+}
+
+h1 {
+    text-align: center;
+    padding: 2rem;
+    background-color:rgba( 0, 0, 0, .5);
+    color: beige;
+    border-radius: 5px;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    padding: 1rem;
+}
+
+.start {
+    padding: .5rem;
+    background-color: beige;
+    font-family: 'Press Start 2P', 'Open Sans';
+    border: none;
+    border-radius: 5px;
+}
+
+.dogrun {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100vw;
+    background-color: black;
+    color: beige;
+    
+}
+.dogrun > li {
+    flex: 1;
+}
+.d0, .d5 {
+    display: none;
+}
+.dog {
+    color: black;
+}
+.pie {
+    display: block;
+}
+.nopie {
+    display: none;
+}
+
+.business {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.business > p {
+    font-size: 1.2rem;
+    padding-top: 1.5rem;
+    width: 100%;
+}
+
+.wordspace {
+    text-align: center;
+    padding: 2rem;
+    height: 2rem;
+    width: 100%;
+}
+
+.guesses, .attempts {
+    color: maroon;
+}
+
+.not-let {
+    display: none;
+    text-align: center;
+    color: gray;
+}
+
+.victory {
+    position: fixed;
+    right: 10vw;
+    bottom: 10vh;
+    z-index: 2;
+    display: none;
+}
